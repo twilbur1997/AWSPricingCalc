@@ -53,22 +53,26 @@ def write_new_services_file(change_path, new_services, deprecated=False):
 def check_previous_file(list_of_current_services, output_path, list_path, change_path):
     today = date.today()
     # YY_mm_dd
-        
+
     date_before = get_day_before(today)
-    previous_day_file_name = get_full_path_for_day_file(date_before, list_path)
-
-    while not exists(previous_day_file_name):
-        print("File from ", date_before, " does not exist. Looking for day before.", sep='')
-        date_before = get_day_before(date_before)
-        previous_day_file_name = get_full_path_for_day_file(date_before, list_path)
-
     old_services = []
-    with open(previous_day_file_name, "r") as file:
-        print(file.readline().strip(), " services were found in previous file.")
-        line = file.readline()
-        while line:
-            old_services.append(line.strip())
+    # Checking if the list directory is empty or not
+    if len(os.listdir(list_path)) == 0:
+        print("Last Scan: Never")
+    else:
+        previous_day_file_name = get_full_path_for_day_file(date_before, list_path)
+        while not exists(previous_day_file_name):
+            print("File from ", date_before, " does not exist. Looking for day before.", sep='')
+            date_before = get_day_before(date_before)
+            previous_day_file_name = get_full_path_for_day_file(date_before, list_path)
+
+        with open(previous_day_file_name, "r") as file:
+            print("Last Scan: ", previous_day_file_name)
+            print(file.readline().strip(), " services were found in previous file.")
             line = file.readline()
+            while line:
+                old_services.append(line.strip())
+                line = file.readline()
 
     new_services = []
     for service in list_of_current_services:
@@ -131,6 +135,8 @@ def write_data_to_file(list_of_current_services, output_path, list_path, change_
         for service_name in list_of_current_services:
             file.write(service_name+"\n")
 
+    if len(os.listdir(path)) == 0:
+        print("Empty directory")
     check_previous_file(list_of_current_services, output_path, list_path, change_path)
     return
 
