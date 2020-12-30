@@ -16,22 +16,22 @@ def get_day_before(day):
     return day - timedelta(days = 1)
 
 
-def get_full_path_for_day_file(day, list_path):
+def get_full_path_for_day_file(day, lists_services_path):
     str_date = day.strftime("%Y_%m_%d")
     partial_file_name = "PricingCalcList_"+str_date
-    complete_file_name = join(list_path, partial_file_name+".txt")
+    complete_file_name = join(lists_services_path, partial_file_name+".txt")
     return complete_file_name
 
 
-def create_directories(output_path, list_path, change_path):
-    mkdir(output_path)
-    mkdir(list_path)
-    mkdir(change_path)
-    print("Directory '% s' created" % output_path)
+def create_directories(selenium_output_path, lists_services_path, new_services_path):
+    mkdir(selenium_output_path)
+    mkdir(lists_services_path)
+    mkdir(new_services_path)
+    print("Directory '% s' created" % selenium_output_path)
     return
 
 
-def write_new_services_file(change_path, new_services, deprecated=False):
+def write_new_services_file(new_services_path, new_services, deprecated=False):
     today = date.today()
     # YY_mm_dd
     date_today = today.strftime("%Y_%m_%d")
@@ -42,7 +42,7 @@ def write_new_services_file(change_path, new_services, deprecated=False):
         partial_file_names = [date_today+"_"+service for service in new_services]
 
     for partial_file_name in partial_file_names:
-        complete_file_name = join(change_path, partial_file_name+".txt")
+        complete_file_name = join(new_services_path, partial_file_name+".txt")
         with open(complete_file_name, "w") as file:
             file.write(partial_file_name+"\n")
     for service in new_services:
@@ -50,24 +50,24 @@ def write_new_services_file(change_path, new_services, deprecated=False):
     return
 
 
-def check_previous_file(list_of_current_services, output_path, list_path, change_path):
+def check_previous_file(list_of_current_services, selenium_output_path, lists_services_path, new_services_path):
     today = date.today()
     # YY_mm_dd
 
     date_before = get_day_before(today)
     old_services = []
     # Checking if the list directory is empty or not
-    if len(os.listdir(list_path)) == 0:
+    if len(os.listdir(lists_services_path)) == 0:
         print("Last Scan: Never")
     else:
-        previous_day_file_name = get_full_path_for_day_file(date_before, list_path)
+        previous_day_file_name = get_full_path_for_day_file(date_before, lists_services_path)
         while not exists(previous_day_file_name):
             print("File from ", date_before, " does not exist. Looking for day before.", sep='')
             date_before = get_day_before(date_before)
-            previous_day_file_name = get_full_path_for_day_file(date_before, list_path)
+            previous_day_file_name = get_full_path_for_day_file(date_before, lists_services_path)
 
         with open(previous_day_file_name, "r") as file:
-            print("Last Scan: ", previous_day_file_name)
+            print("Last Scan: ", previous_day_file_name.split("/")[-1])
             print(file.readline().strip(), " services were found in previous file.")
             line = file.readline()
             while line:
@@ -85,7 +85,7 @@ def check_previous_file(list_of_current_services, output_path, list_path, change
             deprecated.append(service)
 
     if new_services:
-        write_new_services_file(change_path, new_services)
+        write_new_services_file(new_services_path, new_services)
         print("\n\n########################\n# NEW SERVICE(S) ADDED #\n########################\n")
         for service in new_services:
             print(service, "\n")
@@ -93,7 +93,7 @@ def check_previous_file(list_of_current_services, output_path, list_path, change
         print("No new services found since last scan.")
 
     if deprecated:
-        write_new_services_file(change_path, deprecated, True)
+        write_new_services_file(new_services_path, deprecated, True)
         print("\n\n########################\n# SERVICE(S) DEPRECATED #\n########################\n")
         for service in deprecated:
             print(service, "\n")
@@ -121,23 +121,21 @@ def list_services():
     return list_of_current_services
 
 
-def write_data_to_file(list_of_current_services, output_path, list_path, change_path):
+def write_data_to_file(list_of_current_services, selenium_output_path, lists_services_path, new_services_path):
     # Write data to unique file
 
     today = date.today()
     # YY_mm_dd
     date_today = today.strftime("%Y_%m_%d")
     partial_file_name = "PricingCalcList_"+date_today
-    complete_file_name = join(list_path, partial_file_name+".txt")
+    complete_file_name = join(lists_services_path, partial_file_name+".txt")
     with open(complete_file_name, "w") as file:
         file.write(str(len(list_of_current_services))+"\n")
         print(len(list_of_current_services), " services found today.")
         for service_name in list_of_current_services:
             file.write(service_name+"\n")
 
-    if len(os.listdir(path)) == 0:
-        print("Empty directory")
-    check_previous_file(list_of_current_services, output_path, list_path, change_path)
+    check_previous_file(list_of_current_services, selenium_output_path, lists_services_path, new_services_path)
     return
 
 
@@ -165,17 +163,17 @@ def input_with_timeout(timeout=0):
     return unput
 
 
-def checked_today(change_path):
+def checked_today(new_services_path):
     print("\n\n##########################\n#  ALREADY SCANNED TODAY #\n##########################\n")
     # https://stackoverflow.com/questions/3207219/how-do-i-list-all-files-of-a-directory
-    service_files = [f for f in listdir(change_path) if isfile(join(change_path, f))]
+    service_files = [f for f in listdir(new_services_path) if isfile(join(new_services_path, f))]
     today = date.today().strftime("%Y_%m_%d")
     today_files = [f for f in service_files if today in f]
 
     if not today_files:
-        print("No files found today... Running Scan again.")
+        print("No new services found today... Running Scan again.")
         return 0
-    print("Files found already today:")
+    print("A file with these services found already today:")
 
     for file in today_files:
         print(file.split("_")[-1])
@@ -202,28 +200,28 @@ def dumb_crontab_fix():
 def main():
     dumb_crontab_fix() # Goes from home to Desktop to run program in crontab
 
-    output_dir = "SeleniumOutputs"
-    list_dir = "ListsOfServices"
-    change_dir = "NewServicesDates"
+    selenium_output_dir = "SeleniumOutputs"
+    lists_services_dir = "ListsOfServices"
+    new_services_dir = "NewServicesDates"
 
     cwd_dir = getcwd()
-    output_path = join(cwd_dir, output_dir)
-    list_path = join(output_path, list_dir)
-    change_path = join(output_path, change_dir)
+    selenium_output_path = join(cwd_dir, selenium_output_dir)
+    lists_services_path = join(selenium_output_path, lists_services_dir)
+    new_services_path = join(selenium_output_path, new_services_dir)
 
-    if not exists(output_path):
-        create_directories(output_path, list_path, change_path)
+    if not exists(selenium_output_path):
+        create_directories(selenium_output_path, lists_services_path, new_services_path)
     else:
-        print("Directory '% s' already exists" % output_path)
+        print("Directory '% s' already exists" % selenium_output_path)
 
     # Check for services list from today
-    today_file_name = get_full_path_for_day_file(date.today(), list_path)
+    today_file_name = get_full_path_for_day_file(date.today(), lists_services_path)
     if exists(today_file_name):
-        if checked_today(change_path):
+        if checked_today(new_services_path):
             return
     print("\n")
     list_of_current_services = list_services()
-    write_data_to_file(list_of_current_services, output_path, list_path, change_path)
+    write_data_to_file(list_of_current_services, selenium_output_path, lists_services_path, new_services_path)
 
     print("\n===================================\n\n")
     return
