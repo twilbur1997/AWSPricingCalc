@@ -7,21 +7,30 @@ Top of file
 Between 2020/09/28 and 2020/12/02, there were 3 services added and 0 services
 taken out or reorganized
 
-SERVICE ADDED | DATE ADDED
+SERVICE ADDED | DATE ADDED BY MONTH
 ==========================
-AWS Database Migration Service     | 2020/10/08
-Amazon Comprehend                  | 2020/10/19
-Amazon Elastic Container Registry  | 2020/10/21
-AWS Systems Manager                | 2020/10/28
+AWS Database Migration Service               | 2020/10/08
+Amazon Comprehend                            | 2020/10/19
+Amazon Elastic Container Registry            | 2020/10/21
+AWS Systems Manager                          | 2020/10/28
 
-AWS Outposts                       | 2020/11/13
-AWS Snowmobile                     | 2020/11/13
-AWS Elemental MediaLive            | 2020/11/18
+AWS Outposts                                 | 2020/11/13
+AWS Snowmobile                               | 2020/11/13
+AWS Elemental MediaLive                      | 2020/11/18
+AWS Snowball                                 | 2020/11/24
+Amazon DynamoDB                              | 2020/11/24
+Amazon SageMaker                             | 2020/11/24
+Amazon Transcribe                            | 2020/11/24
 
-AWS Snowball                       | 2020/11/24
-Amazon DynamoDB                    | 2020/11/24
-Amazon SageMaker                   | 2020/11/24
-Amazon Transcribe                  | 2020/11/24
+AWS IoT Core                                 | 2020/12/08
+AWS IoT Device Defender                      | 2020/12/08
+AWS IoT Device Management                    | 2020/12/08
+Amazon EKS                                   | 2020/12/09
+Amazon QuickSight                            | 2020/12/17
+AWS Direct Connect                           | 2020/12/17
+Windows Server and SQL Server on Amazon EC2  | 2020/12/18
+AWS Elemental MediaPackage                   | 2020/12/23
+
 
 
 ================================================================================
