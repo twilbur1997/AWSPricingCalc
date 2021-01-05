@@ -6,6 +6,7 @@ from os.path import join, isfile, exists
 import time
 from datetime import date
 from datetime import timedelta
+from datetime import datetime
 import signal
 
 # catmail = cat ../../var/mail/wilburtw
@@ -213,6 +214,9 @@ def main():
         create_directories(selenium_output_path, lists_services_path, new_services_path)
     else:
         print("Directory '% s' already exists" % selenium_output_path)
+
+    current_time = datetime.now().strftime("%H:%M:%S")
+    print("\nCurrent Date and Time: ", date.today(), " ", current_time)
 
     # Check for services list from today
     today_file_name = get_full_path_for_day_file(date.today(), lists_services_path)
