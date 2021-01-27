@@ -1,12 +1,9 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-import os
 from os import listdir, mkdir, getcwd, chdir
 from os.path import join, isfile, exists
 import time
-from datetime import date
-from datetime import timedelta
-from datetime import datetime
+from datetime import date, timedelta, datetime
 import signal
 
 # catmail = cat ../../var/mail/wilburtw
@@ -58,7 +55,7 @@ def check_previous_file(list_of_current_services, selenium_output_path, lists_se
     date_before = get_day_before(today)
     old_services = []
     # Checking if the list directory is empty or not
-    if len(os.listdir(lists_services_path)) == 0:
+    if len(listdir(lists_services_path)) == 0:
         print("Last Scan: Never")
     else:
         previous_day_file_name = get_full_path_for_day_file(date_before, lists_services_path)
@@ -207,6 +204,7 @@ def main():
 
     cwd_dir = getcwd()
     selenium_output_path = join(cwd_dir, selenium_output_dir)
+
     lists_services_path = join(selenium_output_path, lists_services_dir)
     new_services_path = join(selenium_output_path, new_services_dir)
 
