@@ -117,6 +117,7 @@ def main():
     time_stamp = str(date.today()) + " " + str(current_time)
     print("\nCurrent Date and Time: ", time_stamp)
     write_summary(new_services_path, time_stamp, reverse)
+    print("Summary Generated.")
     return
 
 
