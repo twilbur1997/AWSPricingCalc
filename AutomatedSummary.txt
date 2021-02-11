@@ -1,4 +1,4 @@
-This File Was Last Updated: 2021-01-28 15:45:00 (Pacific Time Zone)
+This File Was Last Updated: 2021-02-10 15:45:00 (Pacific Time Zone)
 
 Top of file
 ================================================================================
@@ -6,7 +6,7 @@ Top of file
 
 
 ================================================================================
-Between 2020/10/08 and 2021/01/19, there were 22 services added 
+Between 2020/10/08 and 2021/02/08, there were 24 services added 
 
 
 SERVICE ADDED | DATE ADDED BY MONTH
@@ -36,6 +36,9 @@ AWS Elemental MediaPackage                        | 2020/12/23
 Amazon Kinesis Data Firehose                      | 2021/01/07
 Amazon SageMaker Ground Truth                     | 2021/01/14
 Amazon Translate                                  | 2021/01/19
+
+AWS Secrets Manager                               | 2021/02/08
+Amazon Textract                                   | 2021/02/08
 
 
 
