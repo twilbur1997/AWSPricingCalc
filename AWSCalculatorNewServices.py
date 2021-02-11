@@ -35,7 +35,7 @@ def write_new_services_file(new_services_path, new_services, deprecated=False):
     date_today = today.strftime("%Y_%m_%d")
 
     if deprecated:
-        partial_file_names = ["ZZZ_"+date_today+"_DEPRECATED_"+service for service in new_services]
+        partial_file_names = [date_today+"_DEPRECATED_"+service for service in new_services]
     else:
         partial_file_names = [date_today+"_"+service for service in new_services]
 
