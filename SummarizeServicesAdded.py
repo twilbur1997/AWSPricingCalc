@@ -71,7 +71,7 @@ def write_summary(new_services_path, time_stamp, reverse):
         # Beginning of file
         file.write("This File Was Last Updated: ")
         file.write(time_stamp)
-        file.write(" (Pacific Time Zone)\n\n")
+        file.write(" (Pacific Time Zone, UTC -8:00)\n\n")
 
         global top_of_file
         top_of_file = top_of_file.replace("{first_date}", first_date)
