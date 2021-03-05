@@ -137,18 +137,11 @@ def write_data_to_file(list_of_current_services, selenium_output_path, lists_ser
     return
 
 
-
 class InputTimedOut(Exception):
     pass
-
-
 def inputTimeOutHandler(signum, frame):
     raise InputTimedOut
-
-
 signal.signal(signal.SIGALRM, inputTimeOutHandler)
-
-
 def input_with_timeout(timeout=0):
     unput = ""
     try:
@@ -176,6 +169,9 @@ def checked_today(new_services_path):
     for file in today_files:
         print(file.split("_")[-1])
     print("\nPreparing to scan for services again...")
+
+    # Timeout isn't working with Selenium for some reason. Short circuiting here
+    return 1
 
     scan_again = input_with_timeout(timeout=5)
     if not scan_again:
