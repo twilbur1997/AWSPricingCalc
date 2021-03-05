@@ -1,4 +1,4 @@
-This File Was Last Updated: 2021-02-10 15:45:00 (Pacific Time Zone)
+This File Was Last Updated: 2021-03-02 15:45:01 (Pacific Time Zone, UTC -8:00)
 
 Top of file
 ================================================================================
@@ -6,7 +6,7 @@ Top of file
 
 
 ================================================================================
-Between 2020/10/08 and 2021/02/08, there were 24 services added 
+Between 2020/10/08 and 2021/02/26, there were 31 services added 
 
 
 SERVICE ADDED | DATE ADDED BY MONTH
@@ -39,6 +39,13 @@ Amazon Translate                                  | 2021/01/19
 
 AWS Secrets Manager                               | 2021/02/08
 Amazon Textract                                   | 2021/02/08
+AWS CodeBuild                                     | 2021/02/11
+AWS IoT Things Graph                              | 2021/02/18
+AWS X-Ray                                         | 2021/02/18
+Amazon Cognito                                    | 2021/02/18
+Amazon Managed Streaming for Apache Kafka (MSK)   | 2021/02/18
+AWS CodePipeline                                  | 2021/02/25
+Amazon Neptune                                    | 2021/02/26
 
 
 
