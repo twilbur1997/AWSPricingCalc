@@ -71,7 +71,7 @@ def write_summary(new_services_path, time_stamp, reverse):
         # Beginning of file
         file.write("This File Was Last Updated: ")
         file.write(time_stamp)
-        file.write(" (Pacific Time Zone, UTC -8:00)\n\n")
+        file.write(" (UTC; PDT +7:00 or PST +8:00)\n\n")
 
         global top_of_file
         top_of_file = top_of_file.replace("{first_date}", first_date)
@@ -113,8 +113,9 @@ def main():
     lists_services_path = join(selenium_output_path, lists_services_dir)
     new_services_path = join(selenium_output_path, new_services_dir)
 
-    current_time = datetime.now().strftime("%H:%M:%S")
-    time_stamp = str(date.today()) + " " + str(current_time)
+    # current_time = datetime.now().strftime("%H:%M:%S")
+    current_utc_time = datetime.now().strftime("%H:%M:%S")
+    time_stamp = str(date.today()) + " " + str(current_utc_time)
     print("\nCurrent Date and Time: ", time_stamp)
     write_summary(new_services_path, time_stamp, reverse)
     print("Summary Generated.")
