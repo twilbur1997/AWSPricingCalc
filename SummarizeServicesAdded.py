@@ -102,6 +102,7 @@ def dumb_crontab_fix():
 
 def main():
     dumb_crontab_fix() # Goes from home to Desktop to run program in crontab
+    # Token Check
 
     selenium_output_dir = "SeleniumOutputs"
     lists_services_dir = "ListsOfServices"
