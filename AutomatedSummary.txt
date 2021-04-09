@@ -1,4 +1,4 @@
-This File Was Last Updated: 2021-04-02 15:45:01 (UTC; PDT +7:00 or PST +8:00)
+This File Was Last Updated: 2021-04-09 15:45:00 (UTC; PDT +7:00 or PST +8:00)
 
 Top of file
 ================================================================================
@@ -6,7 +6,7 @@ Top of file
 
 
 ================================================================================
-Between 2020/10/08 and 2021/03/26, there were 37 services added 
+Between 2020/10/08 and 2021/04/09, there were 40 services added 
 
 
 SERVICE ADDED | DATE ADDED BY MONTH
@@ -53,6 +53,10 @@ Amazon QuickSight                                 | 2021/03/18
 Amazon Lookout for Vision                         | 2021/03/22
 AWS Budgets                                       | 2021/03/26
 AWS Cost Explorer                                 | 2021/03/26
+
+AWS Elemental Media Tailor                        | 2021/04/06
+AWS IoT Analytics                                 | 2021/04/06
+Amazon Polly                                      | 2021/04/09
 
 
 
