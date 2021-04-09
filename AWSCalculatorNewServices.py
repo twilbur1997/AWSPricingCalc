@@ -171,7 +171,8 @@ def checked_today(new_services_path):
     print("\nPreparing to scan for services again...")
 
     # Timeout isn't working with Selenium for some reason. Short circuiting here
-    return 1
+    # Scanning again
+    return 0
 
     scan_again = input_with_timeout(timeout=5)
     if not scan_again:
