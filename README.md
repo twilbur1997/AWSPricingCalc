@@ -33,5 +33,39 @@ Thanks for the interest, feel free to send me any questions!
 AWS Pricing Calculator
 https://calculator.aws/#/addService
 
-Explanation of Cron Expressions and English evaluator
+
+
+
+# Cron, Crontab, and Cron jobs
+
+Note: Cron is fairly easy to use. On Mac, simply open your Terminal and use
+`crontab -e` to open your crontab. From there, you can copy and paste the text
+from the crontab.txt file in this directory, or you can create your own
+schedule.
+
+Note that my crontab is configured to run a the program in my Desktop/AWSCalc/
+folder, and you may have to change this path or edit your directory to make it
+work.
+
+As an example, one line in my crontab is the following:
+
+`30 9 * * * /usr/local/bin/python3 /Users/wilburtw/Desktop/AWSCalc/AWSCalculatorNewServices.py`
+
+I'll separate it into three important parts: When, Verb, and Object
+When: `30 9 * * * `
+This expression makes it so this line executes at 09:30 every day of every month.
+Verb: `/usr/local/bin/python3`
+Usually abbreviated to `python3`, this specifies the EXACT python you want to launch.
+Object: `/Users/wilburtw/Desktop/AWSCalc/AWSCalculatorNewServices.py`
+This is what the Verb will act on. This is the absolute path so it doesn't get confused.
+
+The Verb and Object usually can be abbreviated as `python3 AWSCalculatorNewServices.py`,
+but I had trouble doing this in my crontab because it wasn't in /Desktop/AWSCalc
+for the .py file, and it couldn't find the correct Python version to run if it was.
+
+
+More about Cron on Mac
+https://ole.michelsen.dk/blog/schedule-jobs-with-crontab-on-mac-osx/
+
+Explanation of Cron Expressions and a plain-English translator
 https://crontab.cronhub.io/
