@@ -75,4 +75,41 @@ More about Cron on Mac
 https://ole.michelsen.dk/blog/schedule-jobs-with-crontab-on-mac-osx/
 
 Explanation of Cron Expressions and a plain-English translator
+https://crontab.guru/
+
+Another resource that can also help
 https://crontab.cronhub.io/
+
+
+# You Have Mail
+
+Finally, the cronjob will have output from the print statements in the python
+program as well as output from the git commands. To access this output, you must
+access `/var/mail/<your_username>`
+
+For example, the command I use as an alias when at `$pwd = /Users/wilburtw` is
+`cat ~/../../var/mail/wilburtw`
+
+Here is a simple way to launch that command using Aliases.
+
+First, open your bash profile using the following command.
+
+`vim ~/.bash_profile`
+
+Then, add similar lines like the following (any line after a hashtag is a
+comment and is ignored). Do NOT include any whitespace around the `=`!!
+
+```
+# Aliases
+# alias alias_name="command_to_run"
+
+# Get mail from the cronjob
+alias catmail="cat ~/../../var/mail/wilburtw"
+
+# Delete the mail file
+alias delmail="sudo rm ~/../../var/mail/wilburtw"
+```
+
+
+More about Aliases
+https://www.moncefbelyamani.com/create-aliases-in-bash-profile-to-assign-shortcuts-for-common-terminal-commands/
