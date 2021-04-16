@@ -10,6 +10,8 @@ added new services - the calculator offered pricing assistance on 57 services
 when I started this project in late September of 2020, but supports 96 services
 as of April 16th, 2021.
 
+I wanted to know which new services were added and when!
+
 I started with a fairly basic Selenium program that scrapes the AWS Pricing
 Calculator website and then used crontab to get it to run three times a day,
 storing the service names that were found and comparing to previous lists to
