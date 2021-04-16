@@ -1,0 +1,5 @@
+30 9 * * * /usr/local/bin/python3 /Users/wilburtw/Desktop/AWSCalc/AWSCalculatorNewServices.py
+35 11 * * * /usr/local/bin/python3 /Users/wilburtw/Desktop/AWSCalc/AWSCalculatorNewServices.py
+35 15 * * * /usr/local/bin/python3 /Users/wilburtw/Desktop/AWSCalc/AWSCalculatorNewServices.py
+45 15 * * * /usr/local/bin/python3 /Users/wilburtw/Desktop/AWSCalc/SummarizeServicesAdded.py
+00 16 1/7 * * ~/Desktop/AWSCalc/git_commit_push_script.sh
