@@ -52,12 +52,19 @@ As an example, one line in my crontab is the following:
 `30 9 * * * /usr/local/bin/python3 /Users/wilburtw/Desktop/AWSCalc/AWSCalculatorNewServices.py`
 
 I'll separate it into three important parts: When, Verb, and Object
+
 When: `30 9 * * * `
+
 This expression makes it so this line executes at 09:30 every day of every month.
+
 Verb: `/usr/local/bin/python3`
+
 Usually abbreviated to `python3`, this specifies the EXACT python you want to launch.
+
 Object: `/Users/wilburtw/Desktop/AWSCalc/AWSCalculatorNewServices.py`
+
 This is what the Verb will act on. This is the absolute path so it doesn't get confused.
+
 
 The Verb and Object usually can be abbreviated as `python3 AWSCalculatorNewServices.py`,
 but I had trouble doing this in my crontab because it wasn't in /Desktop/AWSCalc
