@@ -88,6 +88,7 @@ program as well as output from the git commands. To access this output, you must
 access `/var/mail/<your_username>`
 
 For example, the command I use as an alias when at `$pwd = /Users/wilburtw` is
+
 `cat ~/../../var/mail/wilburtw`
 
 Here is a simple way to launch that command using Aliases.
