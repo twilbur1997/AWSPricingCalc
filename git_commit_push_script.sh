@@ -8,3 +8,5 @@ git add AutomatedSummary.txt
 git commit -m "AutomatedSummary.txt changes up to ${day_val}"
 git add *
 git commit -m "All other file changes up to ${day_val}"
+git push
+git status
