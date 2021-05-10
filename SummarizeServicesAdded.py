@@ -2,9 +2,7 @@ from os import listdir, mkdir, getcwd, chdir
 from os.path import join, isfile, exists
 from datetime import date, timedelta, datetime
 
-top_of_file = "Top of file\n\
-================================================================================\n\
-\n\n\n\
+top_of_file = "\n\n\
 ================================================================================\n\
 Between {first_date} and {last_date}, there were {num_services} services added \n\n\n\
 SERVICE ADDED | DATE ADDED BY MONTH\n\
@@ -12,7 +10,7 @@ SERVICE ADDED | DATE ADDED BY MONTH\n\
 
 bottom_of_file = "\n\n\n\n\
 ================================================================================\n\
-End of file"
+"
 
 
 def intdate(date_in, reverse):
@@ -71,7 +69,7 @@ def write_summary(new_services_path, time_stamp, reverse):
         # Beginning of file
         file.write("This File Was Last Updated: ")
         file.write(time_stamp)
-        file.write(" (UTC; PDT +7:00 or PST +8:00)\n\n")
+        file.write(" (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)\n\n")
 
         global top_of_file
         top_of_file = top_of_file.replace("{first_date}", first_date)
