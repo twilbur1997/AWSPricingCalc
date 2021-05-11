@@ -80,7 +80,7 @@ def write_summary(new_services_path, time_stamp, reverse):
         # Non-deprecated Services with dates
         prev_month = None
         for service_date, service_str in service_list:
-            service_str = service_str+("."*50 - (len(service_str)))
+            service_str = service_str+("."*(50 - len(service_str)))
             if prev_month != None and prev_month != service_date.split("/")[1]:
                 file.write("\n")
             file.write(service_str+"| "+service_date+"  \n")
