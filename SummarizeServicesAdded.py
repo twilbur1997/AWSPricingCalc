@@ -5,13 +5,13 @@ from datetime import date, timedelta, datetime
 top_of_file = "\n\n\
 ================================================================================\n\
 Between {first_date} and {last_date}, there were {num_services} services added \n\n\n\
-SERVICE ADDED | DATE ADDED BY MONTH\n\
-===================================\n"
+Service                                              | Date           \n\
+---------------------------------------------------- | ---------------\n"
 
 bottom_of_file = "\n\n\n\n\
 ================================================================================\n\
 "
-
+max_len = 52
 
 def intdate(date_in, reverse):
     date_list = [x for x in date_in.split("/")]
@@ -32,7 +32,6 @@ def write_summary(new_services_path, time_stamp, reverse):
     first_date = "99999999"
     last_date = "0"
     for service in service_files:
-        # print(service)
         service = service.split(".")[0] # Get rid of .txt
         service_str = ""
         service_date = ""
@@ -41,7 +40,6 @@ def write_summary(new_services_path, time_stamp, reverse):
 
         service_split = service.split("_")
         deprecated = False
-        # print(service_split)
         if reverse:
             service_split.reverse()
         for stuff in service_split:
@@ -79,11 +77,12 @@ def write_summary(new_services_path, time_stamp, reverse):
 
         # Non-deprecated Services with dates
         prev_month = None
+        global max_len
         for service_date, service_str in service_list:
-            service_str = service_str+("&nbsp; "*(52 - len(service_str)))
+            service_str = service_str+(" "*(max_len - len(service_str)))
             if prev_month != None and prev_month != service_date.split("/")[1]:
-                file.write("\n")
-            file.write(service_str+"| "+service_date+"  \n")
+                file.write((" "*max_len)+" | \n")
+            file.write(service_str+" | "+service_date+"  \n")
             prev_month = service_date.split("/")[1]
 
         # End of file
