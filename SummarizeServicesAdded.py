@@ -84,7 +84,9 @@ def write_summary(new_services_path, time_stamp, reverse):
                 service_str = service_str+" "
             if prev_month != None and prev_month != service_date.split("/")[1]:
                 file.write("\n")
-            file.write(service_str+"| "+service_date+"  \n")
+            num_spaces = 70 - (len(service_str)+len(service_date))
+            spaces = " "*num_spaces
+            file.write(service_str+"|"+spaces+service_date+"  \n")
             prev_month = service_date.split("/")[1]
 
         # End of file
