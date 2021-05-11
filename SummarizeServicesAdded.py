@@ -80,8 +80,9 @@ def write_summary(new_services_path, time_stamp, reverse):
         global max_len
         for service_date, service_str in service_list:
             service_str = service_str+(" "*(max_len - len(service_str)))
-            if prev_month != None and prev_month != service_date.split("/")[1]:
-                file.write((" "*max_len)+" | \n")
+            # Add a blank line between months - doesn't work in table
+            # if prev_month != None and prev_month != service_date.split("/")[1]:
+            #     file.write((" "*max_len)+" | \n")
             file.write(service_str+" | "+service_date+"  \n")
             prev_month = service_date.split("/")[1]
 
