@@ -1,4 +1,6 @@
 #!/bin/bash
+/usr/local/bin/python3 /Users/wilburtw/Desktop/AWSCalc/AWSCalculatorNewServices.py
+/usr/local/bin/python3 /Users/wilburtw/Desktop/AWSCalc/SummarizeServicesAdded.py
 cd Desktop/AWSCalc/
 day_val=$(date +'%Y_%m_%d')
 git status
