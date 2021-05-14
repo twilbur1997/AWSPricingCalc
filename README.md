@@ -118,12 +118,12 @@ https://www.moncefbelyamani.com/create-aliases-in-bash-profile-to-assign-shortcu
 
 
 # Actual results (updated every Friday)(see AutomatedSummary.txt for this info)
-This File Was Last Updated: 2021-05-11 10:58:01 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
+This File Was Last Updated: 2021-05-14 12:00:11 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
 
 
 
 ================================================================================
-Between 2020/10/08 and 2021/05/11, there were 43 services added 
+Between 2020/10/08 and 2021/05/14, there were 44 services added 
 
 
 Service                                              | Date           
@@ -171,6 +171,7 @@ Amazon Polly                                         | 2021/04/09
 Amazon Rekognition                                   | 2021/04/15  
 AWS IoT Events                                       | 2021/04/27  
 Amazon Kendra                                        | 2021/05/11  
+Amazon Transcribe Medical                            | 2021/05/14  
 
 
 
