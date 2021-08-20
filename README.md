@@ -118,7 +118,7 @@ https://www.moncefbelyamani.com/create-aliases-in-bash-profile-to-assign-shortcu
 
 
 # Actual results (updated every Friday)(see AutomatedSummary.txt for this info)
-This File Was Last Updated: 2021-08-13 12:00:12 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
+This File Was Last Updated: 2021-08-20 12:00:13 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
 
 
 
