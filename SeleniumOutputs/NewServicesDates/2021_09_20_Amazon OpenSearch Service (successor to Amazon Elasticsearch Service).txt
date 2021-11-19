@@ -1,0 +1,1 @@
+2021_09_20_Amazon OpenSearch Service (successor to Amazon Elasticsearch Service)
