@@ -11,6 +11,7 @@ from sys import platform
 # delmail = sudo echo "" > ../../var/mail/wilburtw
 # sudo rm ../../var/mail/wilburtw
 # Testing git credential store
+# twice over
 
 def get_day_before(day):
     return day - timedelta(days = 1)
