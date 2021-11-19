@@ -1,6 +1,8 @@
 from os import listdir, mkdir, getcwd, chdir
 from os.path import join, isfile, exists
 from datetime import date, timedelta, datetime
+from sys import platform
+
 
 top_of_file = "\n\n\
 ================================================================================\n\
@@ -91,14 +93,25 @@ def write_summary(new_services_path, time_stamp, reverse):
         file.write(bottom_of_file)
 
 
-def dumb_crontab_fix():
+def crontab_chdir_fix():
     print("Current Working Directory " , getcwd())
-    chdir("Desktop/AWSCalc")
+
+    if platform == "linux" or platform == "linux2":
+        # linux
+        chdir("wilburtw/AWSPricingCalc")
+
+    elif platform == "darwin":
+        # OS X
+        chdir("wilburtw/Desktop/AWSPricingCalc")
+    else:
+        print("Operating System not supported. Use Linux or MacOS.")
+        exit()
+
     print("Current Working Directory " , getcwd())
 
 
 def main():
-    dumb_crontab_fix() # Goes from home to Desktop to run program in crontab
+    crontab_chdir_fix() # Goes from home to Desktop to run program in crontab
     # Token Check
 
     selenium_output_dir = "SeleniumOutputs"
