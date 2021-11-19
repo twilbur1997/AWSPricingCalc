@@ -1,5 +1,5 @@
-30 9 31 10 * /usr/local/bin/python3 wilburtw/Desktop/AWSPricingCalc/AWSCalculatorNewServices.py 
-45 11 31 10 5 /usr/local/bin/python3 wilburtw/Desktop/AWSPricingCalc/SummarizeServicesAdded.py
-00 12 31 10 5 wilburtw/Desktop/AWSPricingCalc/git_mac.sh
+30 9 31 10 3 /usr/local/bin/python3 wilburtw/Desktop/AWSPricingCalc/AWSCalculatorNewServices.py 
+45 11 31 10 3 /usr/local/bin/python3 wilburtw/Desktop/AWSPricingCalc/SummarizeServicesAdded.py
+00 12 31 10 3 wilburtw/Desktop/AWSPricingCalc/git_mac.sh
 
 
