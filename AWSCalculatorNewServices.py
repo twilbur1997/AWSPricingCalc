@@ -10,6 +10,7 @@ from sys import platform
 # catmail = cat ../../var/mail/wilburtw
 # delmail = sudo echo "" > ../../var/mail/wilburtw
 # sudo rm ../../var/mail/wilburtw
+# Testing git credential store
 
 def get_day_before(day):
     return day - timedelta(days = 1)
