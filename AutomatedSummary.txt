@@ -1,9 +1,9 @@
-This File Was Last Updated: 2021-08-25 10:56:03 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
+This File Was Last Updated: 2021-11-05 11:45:00 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
 
 
 
 ================================================================================
-Between 2020/10/08 and 2021/08/02, there were 48 services added 
+Between 2020/10/08 and 2021/11/02, there were 60 services added 
 
 
 Service                                              | Date           
@@ -56,6 +56,18 @@ Amazon Comprehend Medical                            | 2021/05/24
 AWS IoT Greengrass                                   | 2021/06/04  
 AWS Fargate                                          | 2021/07/19  
 Amazon Braket                                        | 2021/08/02  
+Amazon DevOps Guru                                   | 2021/08/26  
+Amazon OpenSearch Service (successor to Amazon Elasticsearch Service) | 2021/09/20  
+AWS Elemental MediaConvert                           | 2021/09/29  
+Amazon CloudFront                                    | 2021/09/29  
+Amazon EventBridge                                   | 2021/09/29  
+Amazon Managed Service for Prometheus                | 2021/09/29  
+Amazon Managed Workflows for Apache Airflow          | 2021/10/01  
+Amazon MemoryDB for Redis                            | 2021/10/01  
+Amazon Personalize                                   | 2021/10/11  
+Amazon Pinpoint                                      | 2021/10/13  
+Amazon FSx for NetApp ONTAP                          | 2021/10/18  
+AWS Amplify                                          | 2021/11/02  
 
 
 
