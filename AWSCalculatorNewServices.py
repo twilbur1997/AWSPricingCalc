@@ -5,6 +5,7 @@ from os.path import join, isfile, exists
 import time
 from datetime import date, timedelta, datetime
 import signal
+from sys import platform
 
 # catmail = cat ../../var/mail/wilburtw
 # delmail = sudo echo "" > ../../var/mail/wilburtw
@@ -107,7 +108,17 @@ def list_services():
     # driver = webdriver.Firefox()
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    driver = webdriver.Chrome(options=chrome_options, executable_path='/Users/wilburtw/Downloads/chromedriver')
+
+    if platform == "linux" or platform == "linux2":
+        # linux
+        ex_path = '/usr/bin/chromedriver'
+    elif platform == "darwin":
+        # OS X
+        ex_path = '/Users/wilburtw/Downloads/chromedriver'
+    else:
+        print("ChromeDriver not found. Use Linux or MacOS with correct path.")
+        exit()
+    driver = webdriver.Chrome(options=chrome_options, executable_path=ex_path)
 
     driver.get("https://calculator.aws/#/addService")
 
@@ -186,14 +197,25 @@ def checked_today(new_services_path):
     return 1
 
 
-def dumb_crontab_fix():
+def crontab_chdir_fix():
     print("Current Working Directory " , getcwd())
-    chdir("Desktop/AWSCalc")
+
+    if platform == "linux" or platform == "linux2":
+        # linux
+        chdir("wilburtw/AWSPricingCalc")
+
+    elif platform == "darwin":
+        # OS X
+        chdir("wilburtw/Desktop/AWSPricingCalc")
+    else:
+        print("Operating System not supported. Use Linux or MacOS.")
+        exit()
+
     print("Current Working Directory " , getcwd())
 
 
 def main():
-    dumb_crontab_fix() # Goes from home to Desktop to run program in crontab
+    crontab_chdir_fix() # Goes from home to git repo to run program for crontab
 
     selenium_output_dir = "SeleniumOutputs"
     lists_services_dir = "ListsOfServices"
