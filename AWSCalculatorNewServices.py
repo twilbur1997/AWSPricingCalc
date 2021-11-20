@@ -272,11 +272,13 @@ def main():
     list_of_current_services = list_services()
     write_data_to_file(list_of_current_services, selenium_output_path, lists_services_path, new_services_path)
 
+    """
     print("Sending text message test...")
     payload_dict = {}
     payload_dict["new_services_list"] = "asdf"
     payload = json.dumps(payload_dict, indent=4)
     invoke_lambda_text(payload)
+    """
 
     print("\n===================================\n\n")
     return
