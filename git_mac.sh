@@ -2,7 +2,7 @@
 /usr/local/bin/python3 /Users/wilburtw/Desktop/AWSPricingCalc/AWSCalculatorNewServices.py
 /usr/local/bin/python3 /Users/wilburtw/Desktop/AWSPricingCalc/SummarizeServicesAdded.py
 cd wilburtw/Desktop/AWSPricingCalc/
-day_val=$(date +'%Y_%m_%d')
+day_val=$(date +'%d/%m/%Y %H:%M:%S')
 git status
 git add SeleniumOutputs/
 git commit -m "Selenium Crawls gathered up to ${day_val}"
