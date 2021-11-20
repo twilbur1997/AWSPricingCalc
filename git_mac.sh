@@ -1,7 +1,7 @@
 #!/bin/bash
 /usr/local/bin/python3 /Users/wilburtw/Desktop/AWSPricingCalc/AWSCalculatorNewServices.py
 /usr/local/bin/python3 /Users/wilburtw/Desktop/AWSPricingCalc/SummarizeServicesAdded.py
-cd Desktop/AWSPricingCalc/
+cd wilburtw/Desktop/AWSPricingCalc/
 day_val=$(date +'%Y_%m_%d')
 git status
 git add SeleniumOutputs/
