@@ -6,6 +6,8 @@ import time
 from datetime import date, timedelta, datetime
 import signal
 from sys import platform
+import boto3
+import json
 
 # catmail = cat ../../var/mail/wilburtw
 # delmail = sudo echo "" > ../../var/mail/wilburtw
@@ -30,6 +32,21 @@ def create_directories(selenium_output_path, lists_services_path, new_services_p
     mkdir(new_services_path)
     print("Directory '% s' created" % selenium_output_path)
     return
+
+
+def invoke_lambda_text(payload):
+    """
+    Example Payload
+    {
+        "new_services_list": "Amazon Alpha, Amazon Beta, Amazon Gamma, AWS Omega"
+    }
+    """
+    lambda_client = boto3.client('lambda')
+    response = lambda_client.invoke(
+        FunctionName='ReminderText',
+        InvocationType='Event',
+        Payload=payload
+    )
 
 
 def write_new_services_file(new_services_path, new_services, deprecated=False):
@@ -88,8 +105,17 @@ def check_previous_file(list_of_current_services, selenium_output_path, lists_se
     if new_services:
         write_new_services_file(new_services_path, new_services)
         print("\n\n########################\n# NEW SERVICE(S) ADDED #\n########################\n")
+        new_services_string = ""
         for service in new_services:
             print(service, "\n")
+            new_services_string = new_services_string+service+" ,"
+
+        new_services_string=new_services_string[:-2] #del final space and comma
+        payload_dict = {}
+        payload_dict["new_services_list"] = new_services_string
+        payload = json.dumps(payload_dict, indent=4)
+        invoke_lambda_text(payload)
+
     else:
         print("No new services found since last scan.")
 
@@ -245,6 +271,11 @@ def main():
     print("\n")
     list_of_current_services = list_services()
     write_data_to_file(list_of_current_services, selenium_output_path, lists_services_path, new_services_path)
+
+    payload_dict = {}
+    payload_dict["new_services_list"] = "asdf"
+    payload = json.dumps(payload_dict, indent=4)
+    invoke_lambda_text(payload)
 
     print("\n===================================\n\n")
     return
