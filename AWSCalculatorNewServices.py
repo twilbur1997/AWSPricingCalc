@@ -41,7 +41,7 @@ def invoke_lambda_text(payload):
         "new_services_list": "Amazon Alpha, Amazon Beta, Amazon Gamma, AWS Omega"
     }
     """
-    lambda_client = boto3.client('lambda')
+    lambda_client = boto3.client('lambda', region_name='us-east-1')
     response = lambda_client.invoke(
         FunctionName='ReminderText',
         InvocationType='Event',
