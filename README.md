@@ -7,8 +7,8 @@ skills, and crontab knowledge.
 
 I was frustrated that the AWS Pricing Calculator did not post updates when they
 added new services - the calculator offered pricing assistance on 57 services
-when I started this project in late September of 2020, but supports 96 services
-as of April 16th, 2021.
+when I started this project in late September of 2020, but supports 113 services
+as of November 19th, 2021.
 
 I wanted to know which new services were added and when!
 
@@ -23,9 +23,13 @@ services, and automated the Git commit flow as well.
 This is all fully open-source, the AWS Pricing Calculator is free to use and I
 haven't ever had trouble crawling it.
 
-I may be looking to host this within AWS in the future, either with a Lambda
+~~I may be looking to host this within AWS in the future, either with a Lambda
 or a small EC2 instance. I also want to try to build a SlackBot to be able to
-publish this information to a Slack Channel.
+publish this information to a Slack Channel.~~
+
+I finally deployed it to a small EC2 instance, and have the code running on the
+hour every hour from 9am Pacific to 9pm Pacific. I also set up a Lambda function
+to send a text to me whenever there is a new service announced!
 
 Thanks for the interest, feel free to send me any questions!
 
@@ -43,9 +47,10 @@ Note: Cron is fairly easy to use. On Mac, simply open your Terminal and use
 from the crontab.txt file in this directory, or you can create your own
 schedule.
 
-Note that my crontab is configured to run a the program in my Desktop/AWSCalc/
-folder, and you may have to change this path or edit your directory to make it
-work.
+Note that crontab will run the program at the default PATH when you open a
+terminal. For me, this was my Users/ directory. I had to add
+/wilburtw/Desktop/AWSCalc in order to run the program in my folder, and you may
+have to change this path or edit your directory to make it work.
 
 As an example, one line in my crontab is the following:
 
@@ -123,7 +128,7 @@ This File Was Last Updated: 2021-11-20 15:36:09 (Pacific Time; PDT=UTC-7:00 or P
 
 
 ================================================================================
-Between 2020/10/08 and 2021/11/02, there were 60 services added 
+Between 2020/10/08 and 2021/11/02, there were 60 services added
 
 
 Service                                              | Date           
