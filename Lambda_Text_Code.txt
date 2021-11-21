@@ -2,20 +2,18 @@ import json
 import boto3
 from botocore.exceptions import ClientError
 
-# Code partially taken from this blog post and the Lambda docs:
-# https://mkdev.me/en/posts/how-to-send-sms-messages-with-aws-lambda-sns-and-python-3
 
 pinpoint = boto3.client('pinpoint')
 
-def lambda_handler(event, context):
 
+def lambda_handler(event, context):
     input_msg = event['new_services_list']
     if "asdf" in input_msg:
         Message = "Testing Lambda to Pinpoint"
     else:
-        comma_index = input_msg.rfind(",")+1
-        Message = "New AWS Service(s): "+ input_msg[:comma_index]+" and"+input_msg[comma_index:]
-
+        comma_index = input_msg.rfind(",") + 1
+        Message = "New AWS Service(s): " + input_msg[:comma_index]
+        Message = Message + " and" + input_msg[comma_index:]
 
     pinpoint.send_messages(
         ApplicationId='9c559cf7466e49b9bacbc9de229bcf2d',
