@@ -15,22 +15,23 @@ import json
 # Testing git credential store
 # twice over
 
+
 def get_day_before(day):
-    return day - timedelta(days = 1)
+    return day-timedelta(days=1)
 
 
-def get_full_path_for_day_file(day, lists_services_path):
+def get_full_path_day(day, lists_path):
     str_date = day.strftime("%Y_%m_%d")
     partial_file_name = "PricingCalcList_"+str_date
-    complete_file_name = join(lists_services_path, partial_file_name+".txt")
+    complete_file_name = join(lists_path, partial_file_name+".txt")
     return complete_file_name
 
 
-def create_directories(selenium_output_path, lists_services_path, new_services_path):
-    mkdir(selenium_output_path)
-    mkdir(lists_services_path)
-    mkdir(new_services_path)
-    print("Directory '% s' created" % selenium_output_path)
+def create_directories(sel_out_path, lists_path, new_path):
+    mkdir(sel_out_path)
+    mkdir(lists_path)
+    mkdir(new_path)
+    print("Directory '% s' created" % sel_out_path)
     return
 
 
@@ -38,7 +39,7 @@ def invoke_lambda_text(payload):
     """
     Example Payload
     {
-        "new_services_list": "Amazon Alpha, Amazon Beta, Amazon Gamma, AWS Omega"
+        "new_services_list": "Amazon Alpha, Amazon Beta, AWS Omega"
     }
     """
     lambda_client = boto3.client('lambda', region_name='us-east-1')
@@ -49,18 +50,20 @@ def invoke_lambda_text(payload):
     )
 
 
-def write_new_services_file(new_services_path, new_services, deprecated=False):
+def write_new_services_file(new_path, new_services, deprecated=False):
     today = date.today()
     # YY_mm_dd
     date_today = today.strftime("%Y_%m_%d")
 
     if deprecated:
-        partial_file_names = [date_today+"_DEPRECATED_"+service for service in new_services]
+        d = "_DEPRECATED_"
+        partial_file_names = [date_today+d+service for service in new_services]
     else:
-        partial_file_names = [date_today+"_"+service for service in new_services]
+        s = "_"
+        partial_file_names = [date_today+s+service for service in new_services]
 
     for partial_file_name in partial_file_names:
-        complete_file_name = join(new_services_path, partial_file_name+".txt")
+        complete_file_name = join(new_path, partial_file_name+".txt")
         with open(complete_file_name, "w") as file:
             file.write(partial_file_name+"\n")
     for service in new_services:
@@ -68,49 +71,51 @@ def write_new_services_file(new_services_path, new_services, deprecated=False):
     return
 
 
-def check_previous_file(list_of_current_services, selenium_output_path, lists_services_path, new_services_path):
+def check_previous_file(list_curr_serv, sel_out_path, lists_path, new_path):
     today = date.today()
     # YY_mm_dd
 
     date_before = get_day_before(today)
     old_services = []
     # Checking if the list directory is empty or not
-    if len(listdir(lists_services_path)) == 0:
+    if len(listdir(lists_path)) == 0:
         print("Last Scan: Never")
     else:
-        previous_day_file_name = get_full_path_for_day_file(date_before, lists_services_path)
+        previous_day_file_name = get_full_path_day(date_before, lists_path)
         while not exists(previous_day_file_name):
-            print("File from ", date_before, " does not exist. Looking for day before.", sep='')
+            print("File from ", date_before, " does not exist.", sep='')
+            print("Looking for day before.")
             date_before = get_day_before(date_before)
-            previous_day_file_name = get_full_path_for_day_file(date_before, lists_services_path)
+            previous_day_file_name = get_full_path_day(date_before, lists_path)
 
         with open(previous_day_file_name, "r") as file:
             print("Last Scan: ", previous_day_file_name.split("/")[-1])
-            print(file.readline().strip(), " services were found in previous file.")
+            print(file.readline().strip(), " services found in previous file.")
             line = file.readline()
             while line:
                 old_services.append(line.strip())
                 line = file.readline()
 
     new_services = []
-    for service in list_of_current_services:
+    for service in list_curr_serv:
         if service not in old_services:
             new_services.append(service)
 
     deprecated = []
     for service in old_services:
-        if service not in list_of_current_services:
+        if service not in list_curr_serv:
             deprecated.append(service)
 
     if new_services:
-        write_new_services_file(new_services_path, new_services)
-        print("\n\n########################\n# NEW SERVICE(S) ADDED #\n########################\n")
+        write_new_services_file(new_path, new_services)
+        print("\n\n########################\n# NEW SERVICE(S) ADDED ")
+        print("########################\n")
         new_services_string = ""
         for service in new_services:
             print(service, "\n")
             new_services_string = new_services_string+service+" ,"
 
-        new_services_string=new_services_string[:-2] #del final space and comma
+        new_services_string = new_services_string[:-2]  # del final space+comma
         payload_dict = {}
         payload_dict["new_services_list"] = new_services_string
         payload = json.dumps(payload_dict, indent=4)
@@ -120,8 +125,9 @@ def check_previous_file(list_of_current_services, selenium_output_path, lists_se
         print("No new services found since last scan.")
 
     if deprecated:
-        write_new_services_file(new_services_path, deprecated, True)
-        print("\n\n########################\n# SERVICE(S) DEPRECATED #\n########################\n")
+        write_new_services_file(new_path, deprecated, True)
+        print("\n\n########################\n# SERVICE(S) DEPRECATED ")
+        print("########################\n")
         for service in deprecated:
             print(service, "\n")
     else:
@@ -131,7 +137,7 @@ def check_previous_file(list_of_current_services, selenium_output_path, lists_se
 
 
 def list_services():
-    list_of_current_services = []
+    list_curr_serv = []
 
     # driver = webdriver.Firefox()
     chrome_options = Options()
@@ -151,40 +157,48 @@ def list_services():
     driver.get("https://calculator.aws/#/addService")
 
     time.sleep(5)
-    for li in driver.find_elements_by_xpath("//ol/li/div/div/span[@class='awsui-cards-card-header-inner']"):
-        list_of_current_services.append(li.text)
+    ele_xpath = "//ol/li/div/div/span[@class='awsui-cards-card-header-inner']"
+    for li in driver.find_elements_by_xpath(ele_xpath):
+        list_curr_serv.append(li.text)
 
     driver.close()
-    return list_of_current_services
+    return list_curr_serv
 
 
-def write_data_to_file(list_of_current_services, selenium_output_path, lists_services_path, new_services_path):
+def write_data_to_file(list_curr_serv, sel_out_path, lists_path, new_path):
     # Write data to unique file
 
     today = date.today()
     # YY_mm_dd
     date_today = today.strftime("%Y_%m_%d")
     partial_file_name = "PricingCalcList_"+date_today
-    complete_file_name = join(lists_services_path, partial_file_name+".txt")
+    complete_file_name = join(lists_path, partial_file_name+".txt")
     with open(complete_file_name, "w") as file:
-        file.write(str(len(list_of_current_services))+"\n")
-        print(len(list_of_current_services), " services found today.")
-        for service_name in list_of_current_services:
+        file.write(str(len(list_curr_serv))+"\n")
+        print(len(list_curr_serv), " services found today.")
+        for service_name in list_curr_serv:
             file.write(service_name+"\n")
 
-    check_previous_file(list_of_current_services, selenium_output_path, lists_services_path, new_services_path)
+    check_previous_file(list_curr_serv, sel_out_path, lists_path, new_path)
     return
 
 
 class InputTimedOut(Exception):
     pass
+
+
 def inputTimeOutHandler(signum, frame):
     raise InputTimedOut
+
+
 signal.signal(signal.SIGALRM, inputTimeOutHandler)
+
+
 def input_with_timeout(timeout=0):
     unput = ""
     try:
-        print("Would you like to abort the scan? (y/n)\nYou have {0} seconds\n".format(timeout))
+        print("Would you like to abort the scan? (y/n)")
+        print("You have {0} seconds\n".format(timeout))
         signal.alarm(timeout)
         unput = input()
         signal.alarm(0)
@@ -193,10 +207,10 @@ def input_with_timeout(timeout=0):
     return unput
 
 
-def checked_today(new_services_path):
-    print("\n\n##########################\n#  ALREADY SCANNED TODAY #\n##########################\n")
-    # https://stackoverflow.com/questions/3207219/how-do-i-list-all-files-of-a-directory
-    service_files = [f for f in listdir(new_services_path) if isfile(join(new_services_path, f))]
+def checked_today(new_path):
+    print("\n\n##########################\n#  ALREADY SCANNED TODAY ")
+    print("##########################\n")
+    service_files = [f for f in listdir(new_path) if isfile(join(new_path, f))]
     today = date.today().strftime("%Y_%m_%d")
     today_files = [f for f in service_files if today in f]
 
@@ -209,8 +223,7 @@ def checked_today(new_services_path):
         print(file.split("_")[-1])
     print("\nPreparing to scan for services again...")
 
-    # Timeout isn't working with Selenium for some reason. Short circuiting here
-    # Scanning again
+    # Timeout isn't working with Selenium. Short circuiting here
     return 0
 
     scan_again = input_with_timeout(timeout=5)
@@ -226,7 +239,7 @@ def checked_today(new_services_path):
 
 
 def crontab_chdir_fix():
-    print("Current Working Directory " , getcwd())
+    print("Current Working Directory ", getcwd())
 
     if platform == "linux" or platform == "linux2":
         # linux
@@ -239,38 +252,38 @@ def crontab_chdir_fix():
         print("Operating System not supported. Use Linux or MacOS.")
         exit()
 
-    print("Current Working Directory " , getcwd())
+    print("Current Working Directory ", getcwd())
 
 
 def main():
-    crontab_chdir_fix() # Goes from home to git repo to run program for crontab
+    crontab_chdir_fix()  # Goes from home to git dir to run program for crontab
 
     selenium_output_dir = "SeleniumOutputs"
     lists_services_dir = "ListsOfServices"
     new_services_dir = "NewServicesDates"
 
     cwd_dir = getcwd()
-    selenium_output_path = join(cwd_dir, selenium_output_dir)
+    sel_out_path = join(cwd_dir, selenium_output_dir)
 
-    lists_services_path = join(selenium_output_path, lists_services_dir)
-    new_services_path = join(selenium_output_path, new_services_dir)
+    lists_path = join(sel_out_path, lists_services_dir)
+    new_path = join(sel_out_path, new_services_dir)
 
-    if not exists(selenium_output_path):
-        create_directories(selenium_output_path, lists_services_path, new_services_path)
+    if not exists(sel_out_path):
+        create_directories(sel_out_path, lists_path, new_path)
     else:
-        print("Directory '% s' already exists" % selenium_output_path)
+        print("Directory '% s' already exists" % sel_out_path)
 
     current_time = datetime.now().strftime("%H:%M:%S")
     print("\nCurrent Date and Time: ", date.today(), " ", current_time)
 
     # Check for services list from today
-    today_file_name = get_full_path_for_day_file(date.today(), lists_services_path)
+    today_file_name = get_full_path_day(date.today(), lists_path)
     if exists(today_file_name):
-        if checked_today(new_services_path):
+        if checked_today(new_path):
             return
     print("\n")
-    list_of_current_services = list_services()
-    write_data_to_file(list_of_current_services, selenium_output_path, lists_services_path, new_services_path)
+    list_curr_serv = list_services()
+    write_data_to_file(list_curr_serv, sel_out_path, lists_path, new_path)
 
     """
     print("Sending text message test...")
