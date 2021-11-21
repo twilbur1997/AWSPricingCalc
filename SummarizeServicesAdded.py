@@ -65,7 +65,6 @@ def write_summary(new_services_path, time_stamp, reverse):
             service_list.append((service_date, service_str))
 
     with open("AutomatedSummary.txt", "w") as file:
-
         # Beginning of file
         file.write("This File Was Last Updated: ")
         file.write(time_stamp)
@@ -95,24 +94,20 @@ def write_summary(new_services_path, time_stamp, reverse):
 
 def crontab_chdir_fix():
     print("Current Working Directory " , getcwd())
-
     if platform == "linux" or platform == "linux2":
         # linux
         chdir("wilburtw/AWSPricingCalc")
-
     elif platform == "darwin":
         # OS X
         chdir("wilburtw/Desktop/AWSPricingCalc")
     else:
         print("Operating System not supported. Use Linux or MacOS.")
         exit()
-
     print("Current Working Directory " , getcwd())
 
 
 def main():
     crontab_chdir_fix() # Goes from home to Desktop to run program in crontab
-    # Token Check
 
     selenium_output_dir = "SeleniumOutputs"
     lists_services_dir = "ListsOfServices"
