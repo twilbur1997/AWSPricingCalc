@@ -123,12 +123,12 @@ https://www.moncefbelyamani.com/create-aliases-in-bash-profile-to-assign-shortcu
 
 
 # Actual results (updated every Friday)(see AutomatedSummary.txt for this info)
-This File Was Last Updated: 2021-11-20 15:36:09 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
+This File Was Last Updated: 2021-11-20 16:00:35 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
 
 
 
 ================================================================================
-Between 2020/10/08 and 2021/11/02, there were 60 services added
+Between 2020/10/08 and 2021/11/02, there were 60 services added 
 
 
 Service                                              | Date           
