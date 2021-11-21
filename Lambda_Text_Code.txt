@@ -1,13 +1,11 @@
-# Code taken from this blog post:
-# https://mkdev.me/en/posts/how-to-send-sms-messages-with-aws-lambda-sns-and-python-3
-
 import json
 import boto3
 from botocore.exceptions import ClientError
 
+# Code partially taken from this blog post and the Lambda docs:
+# https://mkdev.me/en/posts/how-to-send-sms-messages-with-aws-lambda-sns-and-python-3
 
 pinpoint = boto3.client('pinpoint')
-
 
 def lambda_handler(event, context):
 
