@@ -95,11 +95,9 @@ def write_summary(new_path, time_stamp, reverse):
 
 def crontab_chdir_fix():
     print("Current Working Directory ", getcwd())
-    if platform == "linux" or platform == "linux2":
-        # linux
+    if platform == "linux" or platform == "linux2":  # linux
         chdir("wilburtw/AWSPricingCalc")
-    elif platform == "darwin":
-        # OS X
+    elif platform == "darwin":  # OS X
         chdir("wilburtw/Desktop/AWSPricingCalc")
     else:
         print("Operating System not supported. Use Linux or MacOS.")
