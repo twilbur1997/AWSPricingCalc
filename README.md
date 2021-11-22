@@ -1,17 +1,17 @@
 # AWSCalc
 
 ### Resources used during this project:
-python
-selenium
-bash
-Ubuntu
-MacOS
-crontab/cronjobs
-git/github (duh)
-Amazon EC2
-AWS Lambda
-Amazon Pinpoint
-AWS IAM
+- python
+- selenium
+- bash
+- Ubuntu
+- MacOS
+- crontab/cronjobs
+- git/github (duh)
+- Amazon EC2
+- AWS Lambda
+- Amazon Pinpoint
+- AWS IAM
 
 # Intro
 
@@ -138,7 +138,7 @@ https://www.moncefbelyamani.com/create-aliases-in-bash-profile-to-assign-shortcu
 
 
 # Actual results (updated every Friday)(see AutomatedSummary.txt for this info)
-This File Was Last Updated: 2021-11-21 16:03:25 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
+This File Was Last Updated: 2021-11-21 16:07:32 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
 
 
 
