@@ -1,5 +1,20 @@
 # AWSCalc
 
+### Resources used during this project:
+python
+selenium
+bash
+Ubuntu
+MacOS
+crontab/cronjobs
+git/github (duh)
+Amazon EC2
+AWS Lambda
+Amazon Pinpoint
+AWS IAM
+
+# Intro
+
 Hi there!
 
 This is a personal project I made to refresh my Selenium skills, bash scripting
