@@ -15,4 +15,5 @@ git commit -m "README.md changes up to ${day_val}"
 git add *
 git commit -m "All other file changes up to ${day_val}"
 git push
+clear
 git status
