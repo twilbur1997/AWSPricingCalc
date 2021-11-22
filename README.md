@@ -1,5 +1,20 @@
 # AWSCalc
 
+### Resources used during this project:
+python
+selenium
+bash
+Ubuntu
+MacOS
+crontab/cronjobs
+git/github (duh)
+Amazon EC2
+AWS Lambda
+Amazon Pinpoint
+AWS IAM
+
+# Intro
+
 Hi there!
 
 This is a personal project I made to refresh my Selenium skills, bash scripting
@@ -123,11 +138,11 @@ https://www.moncefbelyamani.com/create-aliases-in-bash-profile-to-assign-shortcu
 
 
 # Actual results (updated every Friday)(see AutomatedSummary.txt for this info)
-This File Was Last Updated: 2021-11-20 16:00:35 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
+This File Was Last Updated: 2021-11-21 16:03:25 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
 
 
 
-================================================================================
+=============================================================================
 Between 2020/10/08 and 2021/11/02, there were 60 services added 
 
 
@@ -197,4 +212,4 @@ AWS Amplify                                          | 2021/11/02
 
 
 
-================================================================================
+=============================================================================
