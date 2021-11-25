@@ -1,3 +1,4 @@
-30 9,15,17 * * 5 /usr/local/bin/python3 wilburtw/Desktop/AWSPricingCalc/AWSCalculatorNewServices.py
-45 11 31 10 3 /usr/local/bin/python3 wilburtw/Desktop/AWSPricingCalc/SummarizeServicesAdded.py
-45 17 * * 5 wilburtw/Desktop/AWSPricingCalc/git_mac.sh
+# Only running things on Halloween rn
+# 30 9,15,17 31 10 5 /usr/local/bin/python3 wilburtw/Desktop/AWSPricingCalc/AWSCalculatorNewServices.py
+# 45 11 31 10 3 /usr/local/bin/python3 wilburtw/Desktop/AWSPricingCalc/SummarizeServicesAdded.py
+# 45 17 31 10 5 wilburtw/Desktop/AWSPricingCalc/git_mac.sh
