@@ -4,6 +4,7 @@
 - python
 - selenium
 - bash
+- ssh
 - Ubuntu
 - MacOS
 - crontab/cronjobs
