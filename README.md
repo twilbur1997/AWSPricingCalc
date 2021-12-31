@@ -4,6 +4,7 @@
 - python
 - selenium
 - bash
+- ssh
 - Ubuntu
 - MacOS
 - crontab/cronjobs
@@ -138,7 +139,7 @@ https://www.moncefbelyamani.com/create-aliases-in-bash-profile-to-assign-shortcu
 
 
 # Actual results (updated every Friday)(see AutomatedSummary.txt for this info)
-This File Was Last Updated: 2021-12-24 23:15:10 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
+This File Was Last Updated: 2021-12-31 23:15:10 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
 
 
 
