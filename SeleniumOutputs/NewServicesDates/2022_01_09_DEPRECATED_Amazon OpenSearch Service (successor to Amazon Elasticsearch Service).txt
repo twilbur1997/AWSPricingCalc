@@ -1,0 +1,1 @@
+2022_01_09_DEPRECATED_Amazon OpenSearch Service (successor to Amazon Elasticsearch Service)

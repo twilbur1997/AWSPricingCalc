@@ -1,0 +1,1 @@
+2022_01_09_DEPRECATED_Amazon Managed Streaming for Apache Kafka (MSK)
