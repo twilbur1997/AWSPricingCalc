@@ -221,10 +221,10 @@ def checked_today(new_path):
 
     for file in today_files:
         print(file.split("_")[-1])
-    print("\nPreparing to scan for services again...")
+    print("\n Abandoning scan...")
 
     # Timeout isn't working with Selenium. Short circuiting here
-    return 0
+    return 1
 
     scan_again = input_with_timeout(timeout=5)
     if not scan_again:
