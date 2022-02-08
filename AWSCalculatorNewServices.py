@@ -183,6 +183,7 @@ def write_data_to_file(list_curr_serv, sel_out_path, lists_path, new_path):
     return
 
 
+"""
 class InputTimedOut(Exception):
     pass
 
@@ -205,6 +206,7 @@ def input_with_timeout(timeout=0):
     except InputTimedOut:
         pass
     return unput
+"""
 
 
 def checked_today(new_path):
@@ -221,10 +223,10 @@ def checked_today(new_path):
 
     for file in today_files:
         print(file.split("_")[-1])
-    print("\n Abandoning scan...")
+    print("\n Preparing to scan again...")
 
     # Timeout isn't working with Selenium. Short circuiting here
-    return 1
+    return 0
 
     scan_again = input_with_timeout(timeout=5)
     if not scan_again:
