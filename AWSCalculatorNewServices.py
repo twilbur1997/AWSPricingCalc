@@ -8,6 +8,9 @@ import signal
 from sys import platform
 import boto3
 import json
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+
 
 # catmail = cat ../../var/mail/wilburtw
 # delmail = sudo echo "" > ../../var/mail/wilburtw
