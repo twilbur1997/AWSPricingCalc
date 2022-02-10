@@ -139,12 +139,12 @@ https://www.moncefbelyamani.com/create-aliases-in-bash-profile-to-assign-shortcu
 
 
 # Actual results (updated every Friday)(see AutomatedSummary.txt for this info)
-This File Was Last Updated: 2022-02-04 23:15:10 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
+This File Was Last Updated: 2022-02-10 04:38:21 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
 
 
 
 =============================================================================
-Between 2020/10/08 and 2022/01/14, there were 63 services added 
+Between 2020/10/08 and 2022/02/08, there were 64 services added 
 
 
 Service                                              | Date           
@@ -212,6 +212,7 @@ AWS Amplify                                          | 2021/11/02
 Amazon FSx for OpenZFS                               | 2022/01/12  
 Amazon Inspector                                     | 2022/01/12  
 Amazon Lex                                           | 2022/01/14  
+Amazon GameLift                                      | 2022/02/08  
 
 
 
