@@ -1,5 +1,4 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 from os import listdir, mkdir, getcwd, chdir
 from os.path import join, isfile, exists
 import time
@@ -8,9 +7,10 @@ import signal
 from sys import platform
 import boto3
 import json
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-
 
 # catmail = cat ../../var/mail/wilburtw
 # delmail = sudo echo "" > ../../var/mail/wilburtw
@@ -160,7 +160,7 @@ def list_services():
 
     # driver = webdriver.Chrome(options=chrome_options, executable_path=ex_path)
     # above deprecated in Selenium v4
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
     driver.get("https://calculator.aws/#/addService")
 
     time.sleep(5)
