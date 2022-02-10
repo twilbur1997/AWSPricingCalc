@@ -148,12 +148,16 @@ def list_services():
         ex_path = '/usr/bin/chromedriver'
     elif platform == "darwin":
         # OS X
+        # xattr -d com.apple.quarantine /Users/wilburtw/Downloads/chromedriver
         ex_path = '/Users/wilburtw/Downloads/chromedriver'
     else:
         print("ChromeDriver not found. Use Linux or MacOS with correct path.")
         exit()
-    driver = webdriver.Chrome(options=chrome_options, executable_path=ex_path)
 
+
+    # driver = webdriver.Chrome(options=chrome_options, executable_path=ex_path)
+    # above deprecated in Selenium v4
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
     driver.get("https://calculator.aws/#/addService")
 
     time.sleep(5)
