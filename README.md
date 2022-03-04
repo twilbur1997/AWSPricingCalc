@@ -139,12 +139,12 @@ https://www.moncefbelyamani.com/create-aliases-in-bash-profile-to-assign-shortcu
 
 
 # Actual results (updated every Friday)(see AutomatedSummary.txt for this info)
-This File Was Last Updated: 2022-02-25 23:15:09 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
+This File Was Last Updated: 2022-03-04 23:15:10 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
 
 
 
 =============================================================================
-Between 2020/10/08 and 2022/02/21, there were 68 services added 
+Between 2020/10/08 and 2022/03/03, there were 71 services added 
 
 
 Service                                              | Date           
@@ -217,6 +217,9 @@ Amazon WorkMail                                      | 2022/02/14
 Amazon Managed Blockchain                            | 2022/02/15  
 AWS Elemental MediaConnect                           | 2022/02/17  
 Amazon Healthlake                                    | 2022/02/21  
+AWS Certificate Manager                              | 2022/02/28  
+Amazon AppFlow                                       | 2022/03/01  
+Amazon RDS on AWS Outposts                           | 2022/03/03  
 
 
 
