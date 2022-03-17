@@ -116,12 +116,14 @@ def check_previous_file(list_curr_serv, sel_out_path, lists_path, new_path):
         new_services_string = ""
         for service in new_services:
             print(service, "\n")
-            new_services_string = new_services_string+service+" ,"
+            new_services_string = new_services_string+service+", "
 
         new_services_string = new_services_string[:-2]  # del final space+comma
         payload_dict = {}
         payload_dict["new_services_list"] = new_services_string
         payload = json.dumps(payload_dict, indent=4)
+
+        # print(payload)
         invoke_lambda_text(payload)
 
     else:
