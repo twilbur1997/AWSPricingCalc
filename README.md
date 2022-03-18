@@ -139,12 +139,12 @@ https://www.moncefbelyamani.com/create-aliases-in-bash-profile-to-assign-shortcu
 
 
 # Actual results (updated every Friday)(see AutomatedSummary.txt for this info)
-This File Was Last Updated: 2022-03-11 23:15:10 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
+This File Was Last Updated: 2022-03-18 23:15:10 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
 
 
 
 =============================================================================
-Between 2020/10/08 and 2022/03/10, there were 72 services added 
+Between 2020/10/08 and 2022/03/16, there were 75 services added 
 
 
 Service                                              | Date           
@@ -221,6 +221,9 @@ AWS Certificate Manager                              | 2022/02/28
 Amazon AppFlow                                       | 2022/03/01  
 Amazon RDS on AWS Outposts                           | 2022/03/03  
 Amazon OpenSearch Service                            | 2022/03/10  
+AWS Migration Hub Refactor Spaces                    | 2022/03/16  
+Amazon RDS Custom for Oracle                         | 2022/03/16  
+Amazon RDS Custom for SQL Server                     | 2022/03/16  
 
 
 
