@@ -139,12 +139,12 @@ https://www.moncefbelyamani.com/create-aliases-in-bash-profile-to-assign-shortcu
 
 
 # Actual results (updated every Friday)(see AutomatedSummary.txt for this info)
-This File Was Last Updated: 2022-05-13 23:15:10 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
+This File Was Last Updated: 2022-05-20 23:15:10 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
 
 
 
 =============================================================================
-Between 2020/10/08 and 2022/05/13, there were 85 services added 
+Between 2020/10/08 and 2022/05/16, there were 86 services added 
 
 
 Service                                              | Date           
@@ -234,6 +234,7 @@ AWS AppSync                                          | 2022/04/29
 AWS Location Service                                 | 2022/05/04  
 Amazon Macie                                         | 2022/05/12  
 Amazon Lightsail                                     | 2022/05/13  
+Amazon Lookout for Metrics                           | 2022/05/16  
 
 
 
