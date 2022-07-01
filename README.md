@@ -139,12 +139,12 @@ https://www.moncefbelyamani.com/create-aliases-in-bash-profile-to-assign-shortcu
 
 
 # Actual results (updated every Friday)(see AutomatedSummary.txt for this info)
-This File Was Last Updated: 2022-06-24 23:15:10 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
+This File Was Last Updated: 2022-07-01 23:15:10 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
 
 
 
 =============================================================================
-Between 2020/10/08 and 2022/06/17, there were 90 services added 
+Between 2020/10/08 and 2022/06/29, there were 92 services added 
 
 
 Service                                              | Date           
@@ -239,6 +239,8 @@ AWS DeepRacer                                        | 2022/05/25
 Amazon Kinesis Video Streams                         | 2022/06/07  
 Amazon Forecast                                      | 2022/06/15  
 Amazon Mainframe Modernization                       | 2022/06/17  
+Amazon Fraud Detector                                | 2022/06/27  
+AWS Mainframe Modernization                          | 2022/06/29  
 
 
 
