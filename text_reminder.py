@@ -11,7 +11,7 @@ def invoke_lambda_text(payload):
     """
     lambda_client = boto3.client('lambda', region_name='us-east-1')
     response = lambda_client.invoke(
-        FunctionName='ReminderText',
+        FunctionName='ReminderWrist2',
         InvocationType='Event',
         Payload=payload
     )
