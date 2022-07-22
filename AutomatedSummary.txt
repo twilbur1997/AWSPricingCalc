@@ -1,9 +1,9 @@
-This File Was Last Updated: 2022-07-15 23:15:10 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
+This File Was Last Updated: 2022-07-22 23:15:10 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
 
 
 
 =============================================================================
-Between 2020/10/08 and 2022/06/29, there were 92 services added 
+Between 2020/10/08 and 2022/07/20, there were 94 services added 
 
 
 Service                                              | Date           
@@ -100,6 +100,8 @@ Amazon Forecast                                      | 2022/06/15
 Amazon Mainframe Modernization                       | 2022/06/17  
 Amazon Fraud Detector                                | 2022/06/27  
 AWS Mainframe Modernization                          | 2022/06/29  
+Amazon Kendra                                        | 2022/07/18  
+Amazon Chime SDK                                     | 2022/07/20  
 
 
 
