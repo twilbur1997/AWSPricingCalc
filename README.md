@@ -139,12 +139,12 @@ https://www.moncefbelyamani.com/create-aliases-in-bash-profile-to-assign-shortcu
 
 
 # Actual results (updated every Friday)(see AutomatedSummary.txt for this info)
-This File Was Last Updated: 2022-08-05 23:15:10 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
+This File Was Last Updated: 2022-08-12 23:15:10 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
 
 
 
 =============================================================================
-Between 2020/10/08 and 2022/08/02, there were 95 services added 
+Between 2020/10/08 and 2022/08/09, there were 96 services added 
 
 
 Service                                              | Date           
@@ -244,6 +244,7 @@ AWS Mainframe Modernization                          | 2022/06/29
 Amazon Kendra                                        | 2022/07/18  
 Amazon Chime SDK                                     | 2022/07/20  
 AWS CodeArtifact                                     | 2022/08/02  
+Amazon AppStream 2                                   | 2022/08/09  
 
 
 
