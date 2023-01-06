@@ -1,0 +1,135 @@
+134
+AWS Application Migration Service
+Amazon API Gateway
+Amazon AppFlow
+Amazon AppStream 2.0
+Amazon Athena
+Amazon Aurora MySQL-Compatible
+Amazon Aurora PostgreSQL-Compatible DB
+Amazon CloudFront
+Amazon CloudWatch
+Amazon CodeGuru Reviewer
+Amazon Cognito
+Amazon Comprehend
+Amazon Comprehend Medical
+Amazon Detective
+Amazon DocumentDB (with MongoDB compatibility)
+Amazon DynamoDB
+Amazon EC2
+Amazon EKS
+Amazon Elastic Block Store (EBS)
+Amazon Elastic Container Registry
+Amazon Elastic File System (EFS)
+Amazon Elastic Graphics
+Amazon Elastic IP
+Amazon ElastiCache
+Amazon EMR
+Amazon EventBridge
+Amazon File Cache
+Amazon FinSpace
+Amazon Forecast
+Amazon Fraud Detector
+Amazon FSx for Lustre
+Amazon FSx for NetApp ONTAP
+Amazon FSx for OpenZFS
+Amazon FSx for Windows File Server
+Amazon GameLift
+Amazon GuardDuty
+Amazon Healthlake
+Amazon Inspector
+Amazon Kendra
+Amazon Kinesis Data Analytics
+Amazon Kinesis Data Firehose
+Amazon Kinesis Data Streams
+Amazon Kinesis Video Streams
+Amazon Lightsail
+Amazon Lookout for Metrics
+Amazon Lookout for Vision
+Amazon Macie
+Amazon Managed Service for Prometheus
+Amazon Managed Streaming for Apache Kafka (MSK)
+Amazon Managed Workflows for Apache Airflow
+Amazon MemoryDB for Redis
+Amazon MQ
+Amazon Neptune
+Amazon OpenSearch Service
+Amazon Personalize
+Amazon Pinpoint
+Amazon Polly
+Amazon QuickSight
+Amazon RDS Custom for Oracle
+Amazon RDS Custom for SQL Server
+Amazon RDS for MariaDB
+Amazon RDS for MySQL
+Amazon RDS for Oracle
+Amazon RDS for PostgreSQL
+Amazon RDS for SQL server
+Amazon RDS on AWS Outposts
+Amazon Redshift
+Amazon Rekognition
+Amazon Route 53
+Amazon S3 Glacier (Glacier API only)
+Amazon SageMaker
+Amazon SageMaker Ground Truth
+Amazon Simple Email Service (SES)
+Amazon Simple Notification Service (SNS)
+Amazon Simple Queue Service (SQS)
+Amazon Simple Storage Service (S3)
+Amazon Simple Workflow Service (SWF)
+Amazon Textract
+Amazon Transcribe
+Amazon Transcribe Medical
+Amazon Translate
+Amazon Virtual Private Cloud (VPC)
+AWS Amplify
+AWS App Runner
+AWS AppSync
+AWS Backup
+AWS CloudFormation
+AWS CloudHSM
+AWS CloudTrail
+AWS CodeArtifact
+AWS CodeBuild
+AWS CodeDeploy
+AWS CodePipeline
+AWS Config
+AWS Data Transfer
+AWS Database Migration Service
+AWS DataSync
+AWS Direct Connect
+AWS Directory Service
+AWS Elastic Disaster Recovery
+AWS Elemental Media Tailor
+AWS Elemental MediaConnect
+AWS Elemental MediaConvert
+AWS Elemental MediaLive
+AWS Elemental MediaPackage
+AWS Fargate
+AWS Glue
+AWS IoT Analytics
+AWS IoT Core
+AWS IoT Device Defender
+AWS IoT Device Management
+AWS IoT Events
+AWS IoT Greengrass
+AWS Key Management Service
+AWS Lake Formation
+AWS Lambda
+AWS Location Service
+AWS Mainframe Modernization
+AWS Migration Hub Refactor Spaces
+AWS Network Firewall
+AWS Private Certificate Authority
+AWS Secrets Manager
+AWS Security Hub
+AWS Shield
+AWS SimSpace Weaver
+AWS Snowball
+AWS Step Functions
+AWS Storage Gateway
+AWS Systems Manager
+AWS Transfer Family
+AWS Web Application Firewall (WAF)
+AWS X-Ray
+Elastic Load Balancing
+Windows Server and SQL Server on Amazon EC2
