@@ -1,9 +1,9 @@
-This File Was Last Updated: 2023-01-27 23:15:12 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
+This File Was Last Updated: 2023-02-03 23:15:11 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
 
 
 
 =============================================================================
-Between 2020/10/08 and 2023/01/06, there were 106 services added 
+Between 2020/10/08 and 2023/02/03, there were 107 services added 
 
 
 Service                                              | Date           
@@ -114,6 +114,7 @@ AWS Backup                                           | 2022/12/08
 AWS Elemental Media Tailor                           | 2022/12/15  
 AWS Mainframe Modernization                          | 2022/12/15  
 AWS Private Certificate Authority                    | 2023/01/05  
+AWS Resilience Hub                                   | 2023/02/03  
 
 
 
