@@ -139,12 +139,12 @@ https://www.moncefbelyamani.com/create-aliases-in-bash-profile-to-assign-shortcu
 
 
 # Actual results (updated every Friday)(see AutomatedSummary.txt for this info)
-This File Was Last Updated: 2023-02-10 23:15:11 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
+This File Was Last Updated: 2023-02-17 23:15:09 (Pacific Time; PDT=UTC-7:00 or PST=UTC-8:00)
 
 
 
 =============================================================================
-Between 2020/10/08 and 2023/02/03, there were 107 services added 
+Between 2020/10/08 and 2023/02/17, there were 108 services added 
 
 
 Service                                              | Date           
@@ -256,6 +256,7 @@ AWS Elemental Media Tailor                           | 2022/12/15
 AWS Mainframe Modernization                          | 2022/12/15  
 AWS Private Certificate Authority                    | 2023/01/05  
 AWS Resilience Hub                                   | 2023/02/03  
+AWS Service Catalog                                  | 2023/02/14  
 
 
 
